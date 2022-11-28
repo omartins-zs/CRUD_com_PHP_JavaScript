@@ -10,7 +10,7 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
 ?>
 	<table class="table table-striped table-bordered table-hover">
-		<thead>
+		<thead class="thead-dark">
 			<tr>
 				<th>ID</th>
 				<th>Nome</th>
