@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <h2>Listar Usuarios</h2>
+        <h1 class="display-4 text-center">Listar Usuarios</h1>
         <span id="conteudo"></span>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
