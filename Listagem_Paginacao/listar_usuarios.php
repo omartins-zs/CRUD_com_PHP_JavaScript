@@ -27,9 +27,9 @@ if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
 			while ($row_usuario = mysqli_fetch_assoc($resultado_usuario)) {
 			?>
 				<tr>
-					<th><?php echo $row_usuario['id']; ?></th>
-					<td><?php echo $row_usuario['nome']; ?></td>
-					<td><?php echo $row_usuario['email']; ?></td>
+					<th><?= $row_usuario['id']; ?></th>
+					<td><?= $row_usuario['nome']; ?></td>
+					<td><?= $row_usuario['email']; ?></td>
 				</tr>
 			<?php
 			} ?>
@@ -47,32 +47,23 @@ if (($resultado_usuario) and ($resultado_usuario->num_rows != 0)) {
 	//Limitar os link antes depois
 	$max_links = 2;
 
-	echo '<nav aria-label="paginacao">';
-	echo '<ul class="pagination">';
-	echo '<li class="page-item">';
-	echo "<span class='page-link'><a href='#' onclick='listar_usuario(1, $qnt_result_pg)'>Primeira</a> </span>";
-	echo '</li>';
+	echo "<a href='#' onclick='listar_usuario(1, $qnt_result_pg)'>Primeira</a> ";
+
 	for ($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++) {
 		if ($pag_ant >= 1) {
-			echo "<li class='page-item'><a class='page-link' href='#' onclick='listar_usuario($pag_ant, $qnt_result_pg)'>$pag_ant </a></li>";
+			echo " <a href='#' onclick='listar_usuario($pag_ant, $qnt_result_pg)'>$pag_ant </a> ";
 		}
 	}
-	echo '<li class="page-item active">';
-	echo '<span class="page-link">';
-	echo "$pagina";
-	echo '</span>';
-	echo '</li>';
+
+	echo " $pagina ";
 
 	for ($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++) {
 		if ($pag_dep <= $quantidade_pg) {
-			echo "<li class='page-item'><a class='page-link' href='#' onclick='listar_usuario($pag_dep, $qnt_result_pg)'>$pag_dep</a></li>";
+			echo " <a href='#' onclick='listar_usuario($pag_dep, $qnt_result_pg)'>$pag_dep</a> ";
 		}
 	}
-	echo '<li class="page-item">';
-	echo "<span class='page-link'><a href='#' onclick='listar_usuario($quantidade_pg, $qnt_result_pg)'>Última</a></span>";
-	echo '</li>';
-	echo '</ul>';
-	echo '</nav>';
+
+	echo " <a href='#' onclick='listar_usuario($quantidade_pg, $qnt_result_pg)'>Última</a>";
 } else {
 	echo "<div class='alert alert-danger' role='alert'>Nenhum usuário encontrado!</div>";
 }
