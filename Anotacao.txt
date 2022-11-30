@@ -1,1 +1,8 @@
 https://developers.google.com/speed/libraries
+
+
+https://api.jquery.com/jquery.post/
+
+
+https://getbootstrap.com/docs/4.6/getting-started/introduction/
+
