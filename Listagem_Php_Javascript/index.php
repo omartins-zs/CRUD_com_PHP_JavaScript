@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <h2>Listar usuarios</h2>
     <span id="conteudo"></span>
 
     <script>
